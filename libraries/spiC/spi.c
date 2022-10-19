@@ -1,11 +1,11 @@
 #include "spi.h"
 
 /*
-Pin		Direction, Master SPI	Direction, Slave SPI
+Pin	Direction, Master SPI	Direction, Slave SPI
 MOSI	User defined 			Input
-MISO	Input 					User defined
+MISO	Input 				User defined
 SCK 	User defined 			Input
-SS 		User defined 			Input
+SS 	User defined 			Input
 */
 
 void _spi_init(uint8_t selection){
