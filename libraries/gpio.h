@@ -1,12 +1,15 @@
 
+//This header file is for education... 
+
 #ifndef GPIO_H_
 #define GPIO_H_
 
-#ifndef _STDINT_H
+//TODO: move them to definitions.h file
+
+#ifndef _STDINT_H 
 #include<stdint.h>
 #endif
 
-//TODO: move them to definitions.h file
 typedef uint8_t u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
@@ -15,6 +18,7 @@ typedef uint32_t u32;
 #define sbi(reg, bit)	do{ reg |= (1<<bit);  }while(0)
 #define cbi(reg, bit)	do{ reg &= ~(1<<bit); }while(0)
 
+//-----------------------todo
 
 //TODO: move them to 328pRegisters.h file
 /** Offsets **************************************/
