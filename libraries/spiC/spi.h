@@ -10,6 +10,8 @@
 
 #define _IO				volatile
 
+//TODO: Seperate this definion to definitions.h and 328pRegisters.h
+
 #define BASE_ADDR_SPI	0x4C
 #define BASE_ADDR_GPIO	0x23
 #define OFFSET_GPIOB	0x00
@@ -118,14 +120,6 @@ static const s_spi_dev spi = {
 };
 
 #endif /* SPI_H_ */
-
-
-
-
-
-
-
-
 
 /*
 static void _spi_masterInit(){
