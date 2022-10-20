@@ -1,5 +1,4 @@
-
-//This header file is for education... 
+//Soner Ayar
 
 #ifndef GPIO_H_
 #define GPIO_H_
@@ -21,32 +20,19 @@ typedef uint32_t u32;
 //-----------------------todo
 
 //TODO: move them to 328pRegisters.h file
-/** Offsets **************************************/
-#define _GPIO_BASE_ADDRESS	0x03
-#define _SFR_OFFSET			    0x20
-#define _GPIO_B_OFFSET		  0x00
-#define _GPIO_C_OFFSET		  0x03
-#define _GPIO_D_OFFSET		  0x06
-#define _GPIO_PIN_OFFSET	  0x00
-#define _GPIO_DDR_OFFSET	  0x01
-#define _GPIO_PORT_OFFSET	  0x02
 
 /** Register Addresses ***************************/
-#define _GPIO_B_ADDRESS		(_GPIO_BASE_ADDRESS + _SFR_OFFSET + _GPIO_B_OFFSET)
-#define _GPIO_C_ADDRESS		(_GPIO_BASE_ADDRESS + _SFR_OFFSET + _GPIO_C_OFFSET)
-#define _GPIO_D_ADDRESS		(_GPIO_BASE_ADDRESS + _SFR_OFFSET + _GPIO_D_OFFSET)
+#define ADDR_PINB	(0x23)
+#define ADDR_DDRB	(0x24)
+#define ADDR_PORTB	(0x25)
 
-#define GPIO_B_PIN_ADDRESS	(_GPIO_B_ADDRESS + _GPIO_PIN_OFFSET)
-#define GPIO_B_DDR_ADDRESS	(_GPIO_B_ADDRESS + _GPIO_DDR_OFFSET)
-#define GPIO_B_PORT_ADDRESS	(_GPIO_B_ADDRESS + _GPIO_PORT_OFFSET)
+#define ADDR_PINC	(0x26)
+#define ADDR_DDRC	(0x27)
+#define ADDR_PORC	(0x28)
 
-#define GPIO_C_PIN_ADDRESS	(_GPIO_C_ADDRESS + _GPIO_PIN_OFFSET)
-#define GPIO_C_DDR_ADDRESS	(_GPIO_C_ADDRESS + _GPIO_DDR_OFFSET)
-#define GPIO_C_PORT_ADDRESS	(_GPIO_C_ADDRESS + _GPIO_PORT_OFFSET)
-
-#define GPIO_D_PIN_ADDRESS	(_GPIO_D_ADDRESS + _GPIO_PIN_OFFSET)
-#define GPIO_D_DDR_ADDRESS	(_GPIO_D_ADDRESS + _GPIO_DDR_OFFSET)
-#define GPIO_D_PORT_ADDRESS	(_GPIO_D_ADDRESS + _GPIO_PORT_OFFSET)
+#define ADDR_PIND	(0x29)
+#define ADDR_DDRD	(0x2A)
+#define ADDR_PORTD	(0x2B)
 
 /** Structs and Unions ***************************/
 typedef struct{
@@ -78,17 +64,17 @@ typedef struct{
 }s_io_dev;
 
 static s_io_dev gpio = {
-	.pinB = (_IO u_gpio_t* const)(GPIO_B_PIN_ADDRESS),
-	.ddrB = (_IO u_gpio_t* const)(GPIO_B_DDR_ADDRESS),
-	.portB =(_IO u_gpio_t* const)(GPIO_B_PORT_ADDRESS),
+	.pinB = (_IO u_gpio_t* const)(ADDR_PINB),
+	.ddrB = (_IO u_gpio_t* const)(ADDR_DDRB),
+	.portB =(_IO u_gpio_t* const)(ADDR_PORTB),
 
-	.pinC = (_IO u_gpio_t* const)(GPIO_C_PIN_ADDRESS),
-	.ddrC = (_IO u_gpio_t* const)(GPIO_C_DDR_ADDRESS),
-	.portC =(_IO u_gpio_t* const)(GPIO_C_PORT_ADDRESS),
+	.pinC = (_IO u_gpio_t* const)(ADDR_PINC),
+	.ddrC = (_IO u_gpio_t* const)(ADDR_DDRC),
+	.portC =(_IO u_gpio_t* const)(ADDR_PORTC),
 
-	.pinD = (_IO u_gpio_t* const)(GPIO_D_PIN_ADDRESS),
-	.ddrD = (_IO u_gpio_t* const)(GPIO_D_DDR_ADDRESS),
-	.portD =(_IO u_gpio_t* const)(GPIO_D_PORT_ADDRESS)
+	.pinD = (_IO u_gpio_t* const)(ADDR_PIND),
+	.ddrD = (_IO u_gpio_t* const)(ADDR_DDRD),
+	.portD =(_IO u_gpio_t* const)(ADDR_PORTD)
 };
 
 #endif /* GPIO_H_ */
