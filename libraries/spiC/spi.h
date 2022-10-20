@@ -13,6 +13,7 @@
 //TODO: Seperate this definion to definitions.h and 328pRegisters.h
 
 #define BASE_ADDR_SPI	0x4C
+/*
 #define BASE_ADDR_GPIO	0x23
 #define OFFSET_GPIOB	0x00
 #define OFFSET_REG_PIN	0x00
@@ -22,6 +23,11 @@
 #define REG_ADDR_PINB	BASE_ADDR_GPIO + OFFSET_GPIOB + OFFSET_REG_PIN  //23 + 0 + 0 -> 23
 #define REG_ADDR_DDRB	BASE_ADDR_GPIO + OFFSET_GPIOB + OFFSET_REG_DDR  //23 + 0 + 1 -> 24
 #define REG_ADDR_PORTB	BASE_ADDR_GPIO + OFFSET_GPIOB + OFFSET_REG_PORT //23 + 0 + 2 -> 25
+*/
+
+#define REG_ADDR_PINB	(0x23)
+#define REG_ADDR_DDRB	(0x24)
+#define REG_ADDR_PORTB	(0x25)
 
 #define _DUMY_DATA		0xFF
 
@@ -63,6 +69,9 @@ SPI Mode	Conditions 		Leading Edge 		Trailing Edge
 #define _spi_dataOrder__MSB_FIRST	0
 #define _spi_dataOrder__LSB_FIRST	1
 
+#define _spi__BUSY	spi.bits->intFlag == 0
+
+//TODO: General discriptions... put them to definitions.h
 #define _DISABLE	0
 #define _ENABLE		1
 
@@ -72,8 +81,7 @@ SPI Mode	Conditions 		Leading Edge 		Trailing Edge
 #define _LOW	0
 #define _HIGH	1
 
-#define _spi__BUSY	spi.bits->intFlag == 0
-
+//Register Modellings...
 typedef struct{
 	uint8_t _res0:2;
 	uint8_t ss:1;
